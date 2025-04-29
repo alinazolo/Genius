@@ -60,3 +60,43 @@ body {
     margin-left: 0.5em;
   }
   
+  .page-title {
+font-size: 50px;
+color: aquamarine;
+  }
+
+  .color-picker__option {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  }
+
+  .box {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+
+  }
+
+  .button {
+    padding: 20px;
+
+  }
+
+  .active {
+    color: red;
+  }
+
+  .ball {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    z-index:20;
+    position: absolute;
+    border-radius: 50%;
+  }

@@ -1,516 +1,786 @@
-// const min = prompt("Введіть хвилину");
+//процедурне програмування
+// const summ = 2000;
+// const month = 12;
+// const p = 1000;
 
-// if (min >= 0 && min <= 14) {
-//     console.log("Перша чверть");
-// } else if (min >= 15 && min <= 29) {
-//     console.log("Друга чверть");
-// } else if (min >= 30 && min <= 44) {  // Виправлена умова (правильний діапазон)
-//     console.log("Третя чверть");
-// } else if (min >= 45 && min <= 59) {  // Додано перевірку для четвертої чверті
-//     console.log("Четверта чверть");
-// } else {
-//     console.log("Некоректне значення. Введіть число від 0 до 59.");
-// }
+// const credit = (summ, date, p) => {
+//    return (summ + p) * date;
+// };
+
+// console.log(credit(summ, month, p));
 
 
-// const value = prompt("Write the name of fruit").toLowerCase();
-// let cost;
+//OOP
+// const credit = {
+//    summ: 2000,
+//    month: 12,
+//    p: 1000,
+//     result() {
+//         return (this.summ + this.p)* this.month;
+//     },
+// };
 
-// switch (value) {
-// case "apple":
-//     cost = 10;
-//     alert(`${value} costs ${cost} USD`);
-//     break;
+// console.log(credit.result());
 
-//     case "orange":
-//     cost = 30;
-//     alert(`${value} costs ${cost} USD`);
-//     break;
+// class
 
-//     case "pineaple":
-//     cost = 20;
-//     alert(`${value} costs ${cost} USD`);
-//     break;
 
-//     case "grape":
-//     cost = 60;
-//     alert(`${value} costs ${cost} USD`);
-//     break;
 
-//     default:
-//         alert(`${value} not available`);
-//         break;
-// }33
-
-// function sumDigits(number) {
-//     if (number < 100 || number > 999) {
-//         return "Будь ласка, введіть тризначне число!";
+// class Bank {
+//     static type = 'Privat';
+//     constructor(options) {
+//         this.summ = options.summ;
+//         this.month = options.month;
+//         this.p = options.p;
+//     }
+//     credit() {
+//         return console.log(this.summ + this.p * this.month);
 //     }
 // }
 
-// let numStr = String(prompt("Введіть тризначне число:"));
-// let digit1 = Number(numStr[0]);
-// let digit2 = Number(numStr[1]);
-// let digit3 = Number(numStr[2]);
-// let sum;
+// const userBank = new Bank( {
+// summ: 3000,
+// month: 5,
+// p: 500,
+// });
 
-// switch(numStr) {
-//     default:
-//         sum = digit1 + digit2 + digit3;
-//         break;
+// userBank.credit();
+
+// class NewBank extends Bank {
+//     constructor(options) {
+//         super(options);
+// this.card = options.card;
+//     }
+//     credit() {
+//         super.credit();
+//         return console.log("I am Aval");
+//     }
 // }
 
-// console.log(sum);
-// let a = 0;
-// do {
-//     console.log(a);
-//     a++
-// } while (a < 5) 
+// const aval = new NewBank ({
+//     summ: 3000,
+//     month: 5,
+//     p: 500,
+//     card: true,
+// })
 
-// for (let a = 0; a < 3; a++) {
-//     console.log(a);
+// console.log(aval.credit());
+
+//get&set
+
+// class User {
+//     constructor(props) {
+//         this.name = props.name;
+
+//     }
+//     firstName ="";
+//     lastName = "";
+//     age = "";
+//     city = "";
+
+//     set name(newName) {
+//         const nameRow = newName.split(" ");
+//         this.firstName = nameRow[0];
+//         this.lastName = nameRow[1];
 // }
 
-// let sum = 0;
-// while (true) {
-//     let value = +prompt("Введіть число")
-//     if(!value) break
-//     sum += value
+// get Name() {
+//     return `First name: ${this.firstName} last name: ${this.lastName}`;
 // }
-// console.log(sum)
-
-// for (let i = 0; i < 10; i++) {
-//     if (i % 2 === 0) continue;
-//     console.log(i);
 // }
 
+// const Kris = new User({
+//     name: "Alina Zolo",
+// });
 
-// arr[2] = "Lemon";
-// arr[3] = "Cherry";
-//  arr.push("Tomato");
-//  console.log(arr);
+// const Dasha = new User({
+//     name: "Dasha Ilyanko",
+// });
 
-// arr.pop();
-// console.log(arr);
+// console.log(Kris);
 
-// arr.shift();
-// console.log(arr);
+// const a = [1, 2, 3];
+// console.log(a);
 
-// arr.unshift("Tomato");
-// console.log(arr);
+// const a = {
+//     x:1,
+//     y:2,
+// };
 
-// let arr = ["Apple", "Orange", "Plum"];
+// const b = Object.create(a);
+// console.log(b);
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
+// const Manager = function(name, sales) {
+// this.name = name;
+// this.sales = sales;
+// this.sale = function() {
+//     this.sales += 1;
+// };
+// };
+
+// const ann = new Manager("Anna", 5);
+// const ivan = new Manager ("Ivan", 10);
+
+// console.log(ann.sales);
+// console.log(ivan);
+
+// Manager.prototype.sale = function () {
+//     this.sales += 1;
+// };
+
+// console.log(ann.sales);
+// ann.sale();
+// console.log(ann.sales);
+
+// class CoffeMachine {
+//     _water = 0;
+//     #waterLimit = 500;
+//     constructor(power) {
+//         this.power = power;
+//     }
+
+//     set waterAmount(value) {
+//         if (value < 0){
+//             value = 0;
+//         }
+//         this._water= value;
+//     }
 // }
 
-// for (let item of arr) {
-//     console.log(item);
+// let cofeeMachine = new CoffeMachine(100);
+// console.log(cofeeMachine);
+
+// cofeeMachine.waterAmount = -200;
+// console.log(cofeeMachine);
+
+// Homework 6
+
+// class Abonent {
+// constructor(name, phone) {
+//     this.name = name;
+//     this.phone = phone;
+// }
+// setPhone (phone) {
+// this.phone = phone;
+// }
+// get info() {
+//     return `name: ${this.name}, phone: ${this.phone}`;
+// }
 // }
 
-// for (let key in arr) {
-//     console.log(arr[key]);
+// const ivan = new Abonent ({
+//     name: "Android",
+// phone: "+38099999999",
+// });
+
+// console.log(ivan);
+// ivan.setPhone("+38088888888");
+// console.log(ivan);
+
+// class Abonent {
+//     constructor(name, number) {
+//         this.name = name;
+//         this.number = number;
+//     }
+
+//     setPhone(value) {
+//         this.number = value;
+//     }
+// get info() {
+//     return `name: ${this.name}, number: ${this.number}`;
+// }
 // }
 
-// let matrix = [
-//     [1, 2, 3],
-//     [4, 5, 6],
-//     [7, 8, 9],
-// ];
+// class PhoneBook {
+//     constructor() {
+//         this.abonents = [];
+//     }
 
-// console.log(matrix[1][1]);
+// addAbonent(abonent) {
+//     this.abonents.push(abonent);
+// }
 
-// Складні типи копіюються по посиланню, а прості за значенням
-// let arr = [1,2,3];
-// let arr2 = arr;
-// arr.push(4);
-// console.log(arr);
-// console.log(arr2);
+// findAbonent(name) {
+//     return this.abonents.find(abonent => abonent.name === name) || `Абонента з ім'ям ${name} не знайдено`;
+// }
 
-// let arr = ["a", "b", "c", "d", "e", "ж"];
-// arr.splice(2,3);
-// console.log(arr);
+// showAllAbonents() {
+//     this.abonents.forEach(abonent => console.log (abonent.info)); 
+// }
+// }
 
-// console.log(arr.slice(1, 5));
-// let a = [1, 2, 3];
-// console.log(arr.concat(a, "test"));
+// const phoneBook = new PhoneBook();
 
-// console.log(arr.indexOf("c", 1));
-// console.log(arr.includes("c"));
+// const ivan = new Abonent("Іван", "+380123456789");
+// const anna = new Abonent("Anna", "+3806787890");
+// const marina = new Abonent("Marina", "+38050890890");
 
-// const fruit = [
-//     { id: 1, name: "Apple"},
-//     { id: 2, name: "Banana"},
-//     { id: 3, name: "Pineapple"},
-//     { id: 4, name: "Grape"},
-// ];
+// phoneBook.addAbonent(ivan);
+// phoneBook.addAbonent(anna);
+// phoneBook.addAbonent(marina);
 
-// console.log(fruit.find((item) => item.id === 1));
-// console.log(fruit.filter((item) => item.id < 3));
+// phoneBook.showAllAbonents();
+// console.log(phoneBook.findAbonent("Anna").info);
 
-// let result = fruit.map((item) => item.name.length);
-// console.log(result);
+// marina.setPhone("+38099999999");
+// console.log(marina.info);
 
-// let names = "Olga, Yulia, Masha";
-// let arr = names.split(", ");
-// console.log(arr);
+// Lesson 27
 
-// let newString = arr.join(", ");
-// console.log(newString);
-;
-// let arr = [39, 67, 56, 42, 5];
-// let red = arr.reduce((summ, item) => summ + item);
-// console.log(red);
+// class CircleBox {
+//     constructor(selector) {
+//         this.$el = document.querySelector(selector);
+//     }
 
-// let sum = arr.reduce((summ, item) => summ + item) / arr.length;
-// console.log(sum);
+//     hide() {
+//         this.$el.style.display = "none";
 
-//  function sum(a, b) {
-//    return a + b; 
+//     }
+//     show() {
+//         this.$el.style.display = "block";
+
+//     }
+// }
+
+// class CircleItem extends CircleBox {
+//     constructor(options) {
+//         super(options.selector); // Ensure parent class initializes this.$el first
+
+//         if (this.$el) {  // Ensure element exists before accessing style properties
+//             this.$el.style.width = options.size + "px";
+//             this.$el.style.height = options.size + "px";
+//             this.$el.style.borderRadius = "50%";
+//             this.$el.style.background = options.color;
+//         } else {
+//             console.error(`Element not found: ${options.selector}`);
+//         }
+//     }
+// }
+
+// const CircleRed = new CircleItem({
+//     selector: "#circleRed",
+//     color: "red",
+//     size: 80,
+// });
+
+// const CircleGreen = new CircleItem({
+//     selector: "#circleGreen",
+//     color: "green",
+//     size: 80,
+// });
+
+// const CircleYellow = new CircleItem({
+//     selector: "#circleYellow",
+//     color: "yellow",
+//     size: 30,
+// });
+
+// function Car (name, color) {
+//     this.name = name;
+//     this.color = color;
+// }
+
+// Car.prototype.message = function() {
+//     console.log(`${this.name} is ${this.color} color`);
+// };
+
+// Car.prototype.start = function() {
+//     console.log(`${this.name} is start!!!`);
+// };
+
+// const BMW = new Car("bmw", "red");
+// const Opel = new Car("opel", "green");
+
+// BMW.message();
+// Opel.message();
+// BMW.start();
+
+// let message = {
+//     messageHello() {
+//         console.log(`Hello, ${this.name}`);
+//     },
+
+//     messageBye() {
+//         console.log(`Bye, ${this.name}`);
+//     },
+// };
+
+// class User {
+//     constructor(name) {
+//         this.name = name;
+//     }
+// }
+
+// Object.assign(User.prototype, message);
+
+// new User("Ivan").messageHello();
+
+// Homework 7
+// class Calculator {
+
+//     constructor(number1, number2) {
+// this.number1 = number1;
+// this.number2 = number2;
+//     }
+ 
+//   read() {
+// this.number1 = parseFloat(prompt('Write the first number'));
+// this.number2 = parseFloat(prompt('Write the second number'));
+//   }
+
+//   summ() {
+//     return this.number1 + this.number2;
+//   }
+
+//   mul() {
+//     return this.number1 * this.number2;
+//   }
 //  }
-// let result = sum(7, 8);
-// console.log(result);
 
-// const addName = function() {
-//    const arg = Array.from(arguments); // Перетворюємо arguments у масив
-//    console.log(arguments); // ✅ Правильно, arguments існує у звичайній функції
-//    console.log(arg); // ✅ Масив аргументів
-// };
-// addName(1, 3, 5);
+//  const data = new Calculator(3, 3);
+// console.log(data.summ());
 
-// const addName = function(...arg) {
-//    console.log(arg);
-// };
-// addName(1, 3, 5); 
+// class Person {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
 
-// callback
+//     greet() {
+//         return `Hello ${this.name}. You're ${this.age}`;
+//     }
 
-// function ask(question, yes, no) {
-//    if (confirm(question)) {
-//       yes();
-//    } else {
-//       no();
-//    }
 // }
 
-// function showOk() {
-//    console.log("You say ok")
+// const ivan = new Person("Ivan", 34);
+// console.log(ivan.greet());
+
+// class Rectangle {
+//     constructor(width, height) {
+//                 this.width = width;
+//                 this.height = height;
+//             }
+//     area() {
+//         return this.width * this.height;
+//     }
+
+//     perimeter() {
+//         return (this.width * 2) + (this.height * 2);
+//     }
+
 // }
-// function showCancel() {
-//    console.log("You say No")
+// const rectangle = new Rectangle(5,6);
+// console.log(rectangle.perimeter());
+
+// class BankAccount {
+//     constructor(owner, balance) {
+//         this.owner = owner;
+//         this.balance = balance;
+//     }
+
+//     deposit(amount) {
+//         this.amount = amount;
+//         return this.amount + this.balance;
+//     }
+
+//     withdraw(amount) {
+//         this.amount = amount;
+//         return this.amount - this.balance;
+//     }
+
+//     getBalance() {
+//         return this.balance;
+//     }
 // }
 
-// ask("Yes or no?", showOk, showCancel);
+// const bankAmount = new BankAccount ("Ivan", 6);
+// console.log(bankAmount.getBalance());
 
-// hof
-// const hello = function(name) {
-//    console.log(`Hello, ${name}`);
-// };
+// class Book {
+//     constructor (title, author, pages) {
+//         this.title = title,
+//         this.author = author,
+//         this.pages = pages
+//     }
 
-// hello("Anna");
-
-// const hello = function(name) {
-//    console.log(`Hello, ${name}`);
-// };
-
-// const searchName = function(callback) {
-//    const name = "Ivan";
-//    callback(name);
-// };
-
-// searchName(hello);
-
-// function showMovie(age) {
-//    if (age>21) {
-//       return;
-//    }
-//    return console.log("Go to movie!");
+//     info () {
+//         return `${this.title} by ${this.author}, ${this.pages} pages`;
+//     }
 // }
 
-// showMovie(21);
+// class Library {
+//     constructor() {
+//         this.books = [];
+//     }
 
-// const test = (arg) => {
-//    console.log(arg);
+//     addBook(book) {
+//          this.books.push(book);
+//     }
+
+//     findBook(title) {
+//         return this.books.find(book => book.title === title );
+//     }
 // }
 
-// test("Hello");
+// const myLibrary = new Library ();
 
-// const showMovie = (age) => {
-//    if (age > 21) {
-//       return console.log("Hello");
+// const book1 = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 218);
+// const book2 = new Book('To Kill a Mockingbird', 'Harper Lee', 281);
+// const book3 = new Book('1984', 'George Orwell', 328);
 
-//    }
-//    return console.log("Bye");
-// };
+// myLibrary.addBook(book1);
+// myLibrary.addBook(book2);
+// myLibrary.addBook(book3);
 
-// showMovie(12);
+// const searchTitle = '1984';
+// const foundBook = myLibrary.findBook(searchTitle);
 
-// function checkAge(age) {
-//    return age > 18 ? true : confirm('Батьки дозволили?')
-// };
+// if(foundBook) {
+//     console.log(`Book found: ${foundBook.info()}`);
+// } else {
+//     console.log(`Book titled '${searchTitle}' not found`);
+// }
+
+// const container = document.querySelector('.container');
+// const title = document.querySelector('.title');
 
 
-// function min(a,b) {
-//    if(a<b) {
-//       return a; 
-//    }
-//    else { 
-//       (a>b) 
-//          return b;
+// container.style.backgroundColor = 'lightblue';
+// title.style.fontSize = '24px';
+// const button = document.createElement('button');
+// button.classList.add('button');
+// button.textContent = 'Click';
+// button.href="https://www.youtube.com/watch?v=WSUj3PRvzzg";
+// button.style.backgroundColor = 'green';
+
+// container.append(button);
+// console.log(button);
+// title.remove();
+
+// const widgetElement = document.querySelector('[data-widget-name]');
+// const widgetName = widgetElement.getAttribute('data-widget-name');
+// console.log(widgetName);
+
+// const frameworks = doc
+// ument.querySelector(".frameworks");
+// const newTechnocologies = ["Vue", "Angular", "Svelte"];
+// const markup = newTechnocologies.map((technology) =>  `<li class ="framework-item">${technology}</li>`).join("");
+// frameworks.insertAdjacentHTML("beforeend", markup);
+// frameworks.insertAdjacentHTML("beforebegin", "<h2>Top Frontend Frameworks</h2>");
+// const image = document.querySelector(".image");
+// image.src = "https://images.pexels.com/photos/19852874/pexels-photo-19852874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+// const el = document.querySelector("#user");
+
+
+// el.dataset.dateOfBirth = "1960-10-03";
+// console.log(el.dataset.dateOfBirth);
+
+// const heroEl = document.querySelector(".hero");
+// const titleEL = document.createElement("h1");
+// titleEL.classList.add("page-title");
+// titleEL.textContent = "it's a title";
+
+// heroEl.append(titleEL);
+
+// const imageEl = document.createElement("img");
+// imageEl.src = "https://images.pexels.com/photos/31214765/pexels-photo-31214765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+// imageEl.alt = "mountains";
+// imageEl.width = 320;
+
+// heroEl.append(imageEl);
+
+// const colors = [
+//    {label: 'red', color: '#F30F0F'},
+//    {label: 'yellow', color: '#E6FF00'},
+//    {label: 'black', color: '#202020'},
+//    {label: 'blue', color: '#0900FF'},
+// ];
+
+// const createColorPickerMarkup = options => options.map((option) => {
+//     const buttonEl = document.createElement("button");
+//     buttonEl.classList.add("color-picker__option");
+//     buttonEl.type = "button";
+//     buttonEl.textContent = option.label;
+//     buttonEl.style.backgroundColor = option.color;
+//     return buttonEl;
+// });
+
+// const colorPickerContainerEl = document.querySelector(".js-color-picker");
+// const buttonElements = createColorPickerMarkup(options);
+
+// colorPickerContainerEl.append( ...buttonElements);
+
+// const container = document.querySelector(".js-container");
+// const createColorPickerMarkup = options => options.map((option) => `<button class=color-picker__option type="button" style="background-color:${option.label}">${option.label}</button>`).join("");
+// const buttonsMarkup = createColorPickerMarkup(colors);
+// container.insertAdjacentHTML("beforeend", buttonsMarkup);
+
+// TABLE
+
+// const transactionHistory = [
+//     {
+//         id: "635783",
+//         amount: "678",
+//         date: "2025-03-25",
+//         business: "Tech Solutions Inc.",
+//         name: "John Doe",
+//         type: "Invoice",
+//         account: "Checking"
+//     },
+//     {
+//         id: "635783",
+//         amount: "678",
+//         date: "2025-03-25",
+//         business: "Tech Solutions Inc.",
+//         name: "John Doe",
+//         type: "Invoice",
+//         account: "Checking"
+//       },
+//       {
+//         id: "987654",
+//         amount: "1200",
+//         date: "2025-03-26",
+//         business: "Global Marketing LLC",
+//         name: "Jane Smith",
+//         type: "Expense",
+//         account: "Savings"
 //       }
-// }
-// function min(a,b) {
-//    return a < b ? a:b;
-// };
-// 📌 Завдання: Напиши функцію isEven(n), яка повертає 'Парне', 
-// якщо число парне, і 'Непарне', якщо непарне.
 
-// function isEven(n) {
-//    return n % 2 === 0 ? 'Парне' : 'Непарне';
-// }
-// 📌 Завдання: Напиши функцію checkAge(age), яка повертає 'Доступ дозволено', 
-// якщо age більше або дорівнює 18, і 'Доступ заборонено', якщо менше.
+// ]
 
-// function checkAge(age) {
-//    return age >= 18 ? 'Доступ дозволено' : 'Доступ заборонено';
-// }
+// const table = document.querySelector(".js-tbody");
+// const createTableBodyMarkup = TransactionHistory => TransactionHistory.map((transaction) => {
+//     const { id, amount, date, business, name, type, account } = transaction // const id =  transaction.id
+//     return` 
+//     <tr>
+//         <td>${id}</td>
+//         <td>${amount}</td>
+//         <td>${date}</td>
+//         <td>${business}</td>
+//         <td>${type}</td>
+//         <td>${name}</td>
+//         <td>${account}</td>
+//     </tr>`;
+// }).join('');
 
-// 📌 Завдання: Напиши функцію checkSign(num), яка повертає:
+// const tableMarkup = createTableBodyMarkup(transactionHistory);
 
-// 'Додатне', якщо число більше 0.
-// 'Від’ємне', якщо число менше 0.
-// 'Нуль', якщо число дорівнює 0.
+// table.insertAdjacentHTML('beforeend', tableMarkup);
 
-// function checkSign(num) {
-//    return num > 0 ? 'Додатне': num < 0 ? 'Від’ємне': 'Нуль';
-// }
-// 📌 Завдання: Напиши функцію gradeMark(mark), 
-// яка переводить числову оцінку у текстове значення:
+// const clickMe = document.querySelector(".js-click");
+// const box = document.querySelector(".js-box");
 
-// 90+ – 'Відмінно'
-// 75-89 – 'Добре'
-// 60-74 – 'Задовільно'
-// <60 – 'Незадовільно'
+// clickMe.addEventListener("click", handleClick);
 
-// function gradeMark(mark) {
-//   return 90 <= mark ? 'Відмінно': 75 <= mark ? 'Добре':'Задовільно';
-// }
+// let step = 0;
 
-// console.log(gradeMark(75));
-// const greet = name => `Hello ${name}`;
-// console.log(greet("Анна"));
+// function handleClick() {
+//     step += 50;
 
-// замикання
-// function createNewNumber(n) {
-//    return function (num) {
-//       return n + num;
-//    };
-// }
+//     box.style.marginTop = `${step}px`;
+//     box.style.marginLeft = `${step}px`;
 
-// const addFive = createNewNumber(5);
-// console.log(addFive(10)); // 15
-
-// function createUrl(domain) {
-//    return function (url) {
-//       return `https://${url}.${domain}`;
-//    };
-// }
-
-// const comUrl =  createUrl("com");
-// console.log(comUrl("google"));
-
-// function createUsernamePrefix(prefix) {
-//    return function(name) {
-//       return `${prefix}+${name}`;
-//    };
-// }
-
-// const adminUserName = createUsernamePrefix("d");
-// console.log(adminUserName("john")); // "d+john"
-
-// CALL
-// const userInfo = {
-//    name: 'name',
-//    age: 98,
-//    logInfo: function(job) {
-//       console.group(`${name} info:`);
-//       console.log(`Name is: ${this.name}`);
-//       console.log(`Age is: ${this.age}`);
-//       console.log(`Job is: ${job}`);
-//       console.groupEnd();
-//    },
-// };
-
-// const Vano = {
-//    name: 'Ivan',
-//    age:45,
-// };
-
-// userInfo.logInfo.call(Vano, 'developer');
-
-// const showUserInfo = {
-// name:name,
-// age: 87,
-// logInfo: function(job, city) {
-//    console.group(`${name} info:`);
-//       console.log(`Name is: ${this.name}`);
-//       console.log(`Age is: ${this.age}`);
-//       console.log(`Job is: ${job}`);
-//       console.log(`City is: ${city}`);
-//       console.groupEnd();
-// },
-// };
-
-// const Vano = {
-//    name: 'Ivan',
-//    age:45,
-// };
-
-// showUserInfo.logInfo.apply(Vano, ["developeer", "Lviv"]);
-
-// const message = function(name, stars) {
-//    console.log(`${name}, WElcome to ${this.hotel}, stars ${stars}`);
-// };
-
-// const Bukovel =  {hotel: "Bukovel"};
-// const Turist = { hotel: "Turist"};
-
-// message.call(Bukovel, "Ivan", "5");
-// message.call(Turist, "Ivan", "3");
-
-// message.apply(Bukovel, ["Ivan", "5"]);
-// message.apply(Turist, ["Ivan", "3"]);
-
-// message.bind(Bukovel, "Ivan", "5")();
-// message.bind(Turist, "Ivan", "3")();
-
-
-// const cart = {
-//    showItems() {
-//       console.log("In cart:", this.items);
-//    },
-// };
-
-// const woman = {
-//    items: ["dress, shoes"],
-// };
-
-// const men = {
-//    items: ["Suit, T-shirt"],
-// };
-
-// const child = {
-//    items: ["Suit, T-shirt"],
-// };
-
-
-// document.querySelector('#wom').addEventListener('click', cart.showItems.bind(woman));
-// document.querySelector('#man').addEventListener('click', cart.showItems.bind(men));
-// document.querySelector('#children').addEventListener('click', cart.showItems.bind(child));
-
-// const infoCar = {
-//    name: "BMW",
-//    model: 'M7',
-//    color: "white",
-//    showInfo: function() {
-//       console.log( "Car "+ this.name + " model " + this.model + " color " + this.color);
-//    },
-// };
-
-// car2 = {
-//    name: "Opel",
-//    model: "XXX",
-//    color: "red",
-// };
-
-// infoCar.showInfo.bind(car2)();
-// infoCar.showInfo.call(car2);
-// infoCar.showInfo.apply(car2);
-
-// HOMEWORK LESSON 5
-
-
-// 1
-// const infoStudent = {
-//    name: 'Ivan',
-//    specialize: 'Marketing',
-//    averageMark: 5,
-//    missedLessons: 3,
-//    showInfo: function() {
-//       console.log(' name: ' + this.name + ' specialize: ' + this.specialize + ' average mark: ' 
-//          + this.averageMark + ' missed lessons: ');
-//    },
-// };
-
-// student2 = {
-//    name: 'Liza',
-//    specialize: 'Medicine',
-//    averageMark: 2,
-//    missedLessons: 1,
-// };
-
-// student3 = {
-//    name: 'Vasil', 
-//    specialize: 'Psychology',
-//    averageMark: 4,
-//    missedLessons: 8,
+//     console.log(step);
 
 // }
+// task1
+// const cars = [
+//     {
+//         id:1,
+//         car: "Audi",
+//         type: "A6",
+//         price: 3000,
+//         img: "https://images.pexels.com/photos/9957864/pexels-photo-9957864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
-// infoStudent.showInfo.bind(student2)();
-// infoStudent.showInfo.call(student2);
-// infoStudent.showInfo.apply(student2);
+//     },
 
-// infoStudent.showInfo.bind(student3)();
-// infoStudent.showInfo.call(student3);
-// infoStudent.showInfo.apply(student3);
+//     {
+//         id:2,
+//         car: "BMW",
+//         type: "X6",
+//         price: 3000,
+//         img: "https://www.shutterstock.com/image-photo/riga-latvia-5-september-2023-600nw-2357845059.jpg",
+//     },
 
+//     {
+//         id:3,
+//         car: "Honda",
+//         type: "Civic",
+//         price: 3000,
+//         img: "https://cdn-xy.drivek.com/eyJidWNrZXQiOiJkYXRhay1jZG4teHkiLCJrZXkiOiJjb25maWd1cmF0b3ItaW1ncy9jYXJzL2ZyL29yaWdpbmFsL0hPTkRBL0NJVklDLVRZUEUtUi80MjA5MV9IQVRDSEJBQ0stNS1ET09SUy9ob25kYS1jaXZpYy10eXBlLXItZnJvbnQtdmlldy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMjQsImhlaWdodCI6bnVsbCwiZml0IjoiY292ZXIifX19",
+//     },
+// ]
 
-// const definition = {
-//    showDefinition () {
-//       console.log(this.name, this.definition);
-//    },
+// const refs = {
+//     form: document.querySelector(".js-form"),
+//     container: document.querySelector(".js-list"),
 // };
 
-// const html = {
-//    name: 'HTML',
-//    definition: 'is the most basic building block of the Web. It defines the meaning and structure of web content.',
+// function createCarsMarkup(cars) {
+//     return cars
+//     .map(
+//         (car) => `<li>
+//         <img src="${car.img}" alt="${car.type}"></img>
+//         <h2>${car.car}</h2>
+//         <h3>${car.type}</h3>
+//         <span>Price: ${car.price}$</span>
+//     </li>`)
+//     .join("");   
+// }
+
+// const carsMarkup = createCarsMarkup(cars);
+// refs.container.insertAdjacentHTML("beforeend", carsMarkup);
+
+// refs.form.addEventListener("submit", handleSearch);
+
+// function handleSearch(event) {
+// event.preventDefault();
+// const {options, query} = event.currentTarget.elements;
+// console.log(options.value, query.value);
+// const result = cars.filter((car) => car[options.value].toLowerCase().includes(query.value.toLowerCase())
+// );
+// refs.container.innerHTML = createCarsMarkup(result);
 // };
 
-// const css = {
-//    name: 'CSS',
-//    definition: 'allows you to create great-looking web pages',
+// const categories = document.querySelectorAll('#categories .item');
+// console.log('Number of categories:', categories.length);
+
+// categories.forEach(category => {
+//     const title = category.querySelector('h2').textContent;
+//     const itemsCount = category.querySelectorAll('ul li').length;
+//     console.log("Category:", title);
+//     console.log("Elements:", itemsCount);  
+// });
+// const images = [
+//       {
+//         url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+//         alt: "White and Black Long Fur Cat",
+//       },
+//       {
+//         url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+//         alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+//       },
+//       {
+//         url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//         alt: "Group of Horses Running",
+//       },
+//       {
+//         url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
+//         alt: "Alpine Spring Meadows",
+//       },
+//       {
+//         url: "https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg",
+//         alt: "Nature Landscape",
+//       },
+//       {
+//         url: "https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg",
+//         alt: "Lighthouse Coast Sea",
+//       },
+//     ];
+
+//     const gallery = document.querySelector(".gallery");
+
+//     function createImageMarkup(images) {
+//         return images
+//         .map(
+//             (image) => `<li>
+//             <img src="${image.url}" alt="${image.alt}"></img
+//             </li>`
+//         ).join("");   
+//     }
+// const imageMarkup = createImageMarkup(images);
+// gallery.insertAdjacentHTML("beforeend", imageMarkup);
+    // const carsMarkup = createCarsMarkup(cars);
+// refs.container.insertAdjacentHTML("beforeend", carsMarkup);
+
+    // function createCarsMarkup(cars) {
+//     return cars
+//     .map(
+//         (car) => `<li>
+//         <img src="${car.img}" alt="${car.type}"></img>
+//         <h2>${car.car}</h2>
+//         <h3>${car.type}</h3>
+//         <span>Price: ${car.price}$</span>
+//     </li>`)
+//     .join("");   
+// }
+
+// Task 2
+// const addBtn = document.querySelector("#add");
+// const removeBtn = document.querySelector("#remove");
+// const clickBtn = document.querySelector("#click");
+
+// const handleClick = () => {
+//     console.log("Hello");
 // };
 
-// document.querySelector('#html').addEventListener('click', definition.showDefinition.bind(html));
-// document.querySelector('#css').addEventListener('click', definition.showDefinition.bind(css));
+// addBtn.addEventListener("click", () => {
+//     clickBtn.addEventListener("click", handleClick)
+// } );
 
-const infoFruit = {
-product: 'banana',
-price: 30,
-quantity: 4.5,
-total: function() {
-console.log(this.product+ " costs: " + this.price * this.quantity);
-},
-};
+// removeBtn.addEventListener("click", () => {
+//     clickBtn.removeEventListener("click", handleClick)
+// });
+// Task 3
+// const form = document.querySelector(".form");
+// const loginInput = form.querySelector('input[type="text"]');
+// const passwordInput = form.querySelector('input[type="password"]');
 
-const fruit2 = {
-    product: 'cherry',
-price: 58,
-quantity: 1.3,
-};
+// form.addEventListener("submit", handleSubmit);
 
-const fruit3 = {
-    product: 'orange',
-price: 89,
-quantity: 3.4,
-};
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const login = loginInput.value;
+//     const password = passwordInput.value;
+//     console.log(`Логін ${login}, pasword ${password}`);
+//     form.reset();
+// } 
 
-infoFruit.total.call(fruit2);
-infoFruit.total.apply(fruit2);
-infoFruit.total.bind(fruit2)();
+//Task 4
 
-infoFruit.total.bind(fruit3)();
-infoFruit.total.call(fruit3);
-infoFruit.total.apply(fruit3);
+// const ball = document.querySelector(".ball");
+
+// ball.onmousedown = function (event) {
+//     function move(pageX, pageY) {
+//         ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+//         ball.style.top = pageY - ball.offsetHeight / 2 + "px";
+//     }
+
+//     move(event.pageX, event.pageY);
+
+//     function onMouseMove(event) {
+//         move(event.pageX, event.pageY);
+//     }
+
+//     document.addEventListener("mousemove", onMouseMove);
+
+//     ball.onmouseup = function () {
+//         document.removeEventListener("mousemove", onMouseMove); // Fixed typo here
+//         ball.onmouseup = null; // optional cleanup
+//     };
+// }
+
+//Task 5
+
+// const input = document.querySelector(".input");
+// const title = document.querySelector(".title");
+
+// input.addEventListener ("input", updateTitle);
+
+// function updateTitle(event) {
+//     event.preventDefault();
+//     const trimmedValue = input.value.trim();
+//     title.textContent = trimmedValue === '' ? 'Anonymous' : trimmedValue
+// };
+
+const form = document.querySelector(".login-form");
+const emailInput = form.querySelector('input[type="email"]');
+const passwordInput = form.querySelector('input[type="password"]');
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+    event.preventDefault();
+    
+}
