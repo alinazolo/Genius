@@ -773,14 +773,388 @@
 //     const trimmedValue = input.value.trim();
 //     title.textContent = trimmedValue === '' ? 'Anonymous' : trimmedValue
 // };
+// Task 5
+// const form = document.querySelector(".login-form");
+// const emailInput = form.querySelector('input[type="email"]');
+// const passwordInput = form.querySelector('input[type="password"]');
 
-const form = document.querySelector(".login-form");
-const emailInput = form.querySelector('input[type="email"]');
-const passwordInput = form.querySelector('input[type="password"]');
+// form.addEventListener("submit", handleSubmit);
 
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
-    event.preventDefault();
+// function handleSubmit(event) {
+//     event.preventDefault();
     
+// }
+
+// localStorage.setItem("name", "Kristina");
+// const a = localStorage.getItem("name");
+// console.log(a);
+
+// function check() {
+//     let val = document.getElementByName("radio");
+//     if (val[0].checked) {
+//         console.log("Woman");
+//     } else {
+//         console.log("Man");
+//     }
+// }
+
+// <!-- Task 6 -->
+// const form = document.querySelector(".form");
+// const nameInput = document.querySelector(".inputName");
+// const inputLastName = document.querySelector(".inputLastName");
+// const age = document.querySelector("#age");
+// const male = document.getElementsByName("radio");
+
+// form.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+//     event.preventDefault();
+//     const info = {
+//         name: nameInput.value, 
+//         lastName:  inputLastName.value,
+//         age: age.value,
+//         male: male[0].checked,
+//     };
+//     console.log(info);
+//     localStorage.setItem("info", JSON.stringify(info));
+// }
+// if (localStorage.getItem("info")) {
+//     const ls = localStorage.getItem("info");
+//     console.log(ls);
+//     nameInput.value = ls.name;
+//     inputLastName.value = ls.lastName;
+// }
+
+// <!-- Task 7 -->
+
+// let form = document.querySelector('#form');
+// let formData = {};
+// form.addEventListener("input", function(event) {
+//     formData[event.target.name] = event.target.value;
+//     localStorage.setItem("info", JSON.stringify(formData))
+// });
+
+// if (localStorage.getItem("formData")) {
+//     formData = JSON.parse(localStorage.getItem("formData"));
+//     for (let key in formData) {
+//         form.elements[key].value = formData[key];
+//     }
+// }
+
+// Task 4
+
+// let form = document.querySelector(".login-form");
+
+// form.addEventListener("submit", function(event) {
+//     event.preventDefault();
+
+//     const {
+//         email,
+//         password
+//     } = form.elements
+
+//     const emailValue = email.value.trim();
+//     const passwordValue = password.value.trim();
+
+//     if(emailValue === '' || passwordValue === '' ) {
+//         alert('All form fields must be filled in');
+//         return;
+//     }
+
+//     const fromData = {
+//         email: emailValue,
+//         password: passwordValue
+//     };
+//     console.log(formData); // виводимо об'єкт у консоль
+//     form.reset(); // очищаємо форму
+// });
+
+// Task 5
+// const color = document.querySelector(".color");
+// const button = document.querySelector(".change-color");
+// const widget = document.querySelector(".widget");
+
+// button.addEventListener("click", changeColor); 
+
+// function changeColor(event) {
+//     const newColor = getRandomHexColor();
+//     color.textContent = newColor;
+//     document.body.style.backgroundColor = newColor;
+// };
+
+// function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215)
+//       .toString(16)
+//       .padStart(6, 0)}`;
+//   }
+  
+// Unit 8 part 1
+// const products = [
+//     {
+//         id: 1,
+//         img: "https://istyle.rs/pub/media/catalog/product/cache/image/400x400/beff4985b56e3afdbeabfc89641a4582/i/p/iphone_15_pro_natural_titanium_pdp_image_position-1__en-us_1_1.jpg",
+//         name: "iPhone 15",
+//         price: 2000,
+//         description: "iPhone 15 Pro Max 256GB Natural Titanium"
+//     },
+//     {
+//         id: 2,
+//         img: "https://istyle.rs/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/i/p/iphone_15_pro_max_blue_titanium_pdp_image_position-1__en-us_1.jpg",
+//         name: "Samsung Galaxy S24",
+//         price: 1800,
+//         description: "Samsung Galaxy S24 Ultra 512GB Phantom Black"
+//     },
+//     {
+//         id: 3,
+//         img: "https://shop.switch.com.my/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__GBEN_7cf60425-0d5a-4bc9-bfd9-645b9c86e68e.jpg?v=1717694179&width=823",
+//         name: "Google Pixel 8 Pro",
+//         price: 1600,
+//         description: "Google Pixel 8 Pro 256GB Obsidian"
+//     }
+// ];
+
+// function createProductsMarkup(products) {
+//     return products.map(
+//         ({id, 
+//             img, 
+//             price}) => `<li data-id="${id}" class="item product-item">
+//             <img src="${img}" alt="${name}" width="300")/>
+//             <h2>${name}</h2>
+//             <p>Price: ${price}$</p>
+//             </li>`
+//         )
+//         .join("")
+// }
+
+// const container = document.querySelector(".products");
+// container.insertAdjacentHTML("beforeend", createProductsMarkup(products));
+// container.addEventListener("click", handleCardClick);
+
+// function handleCardClick(event) {
+//     if(event.currentTarget === event.target) {
+//         return;
+//     }
+//     console.log(event.target);
+
+//     const currentProduct = event.target.closest(".product-item");
+//     const productId = Number(currentProduct.dataset.id);
+//     const productObj = products.find(({id}) => id === productId);
+//     console.log(productObj);
+
+//     const instance = basicLightbox.create(`
+//         <div class="modal">
+//         <img src="${productObj.img}" alt="${productObj.name}"/>
+//         <h2>${productObj.name}</h2>
+//             <p>Price: ${productObj.price}$</p>
+//                <p>Description: ${productObj.description}$</p>
+//         </div>
+//     `);
+//     instance.show();
+// }
+
+// глибока деструкирізація 
+// const user = {
+//     username: "Jacob",
+//     skills: {
+//         html: true,
+//         css: false,
+//         js: true,
+//     },
+// };
+// const {
+//     skills: { html, css, js },
+// } = user;
+
+// console.log(html); 
+// console.log(css); 
+
+// іменована деструкирізація
+//  const stack = {
+//    js: true,
+//    html: true,
+//    nodejs: false
+// };
+//const jsCore = stack.js
+// const { js: jsCore, html: html5,  nodejs} = stack;
+// console.log(jsCore); 
+
+// деструкирізація значення за замовчуванням 
+// const teacher = {
+//     firstName: "Robert",
+//     lastName: "Black",
+// };
+
+// const { firstName, lastName, age = 30 } = teacher;
+
+// console.log(age); 
+
+
+// const user = {
+//     username: "Jacob",
+//     skills: {
+//         html: true,
+//         css: false,
+//         js: true,
+//     },
+// };
+
+// function getUserName({username: name, skills: { html, css, js}} = {}){
+//     console.log(
+//         `Hello my name is ${name}, I know html - ${html}, css - ${css} and js - ${js}`
+//     );
+// }
+//  getUserName(user);
+//Task 
+//  function calculateHousePerimetr({a, b, c, d }) {
+//     const perimeter = a + b + c + d;
+//     return perimeter;
+//  }
+
+//  const houseSides = {
+//     a: 10,
+//     b: 15,
+//     c: 10,
+//     d: 15,
+//  };
+
+//  const perimeter = calculateHousePerimetr(houseSides);
+//  console.log(perimeter);
+
+// //Task 
+
+// function calculatePerimeter({width, length}) {
+//     return width * 2 + length * 2;
+// }
+//  console.log(calculatePerimeter({width: 5, length: 2}));
+
+// Unit 8 homework part 1
+const images = [
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+    description: 'Hokkaido Flower',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
+    description: 'Container Haulage Freight',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
+    description: 'Aerial Beach View',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
+    description: 'Flower Blooms',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
+    description: 'Alpine Mountains',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
+    description: 'Mountain Lake Sailing',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
+    description: 'Alpine Spring Meadows',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+    description: 'Nature Landscape',
+  },
+  {
+    preview:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+    original:
+      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+    description: 'Lighthouse Coast Sea',
+  },
+];
+
+
+function createGalleryMarkup(images) {
+    return images.map(
+        ({preview, original, description}) => `<li class="gallery-item"
+          <a class="gallery-link" href="${original}">
+
+        <img
+      class="gallery-image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+        />
+  </a>
+</li>`
+    ).join("")
 }
+
+const gallery = document.querySelector(".gallery");
+gallery.insertAdjacentHTML("beforeend", createGalleryMarkup(images));
+gallery.addEventListener("click", galleryClick); 
+
+function galleryClick(event) {
+    event.preventDefault();
+     if(event.target.nodeName !== 'IMG') {
+ return;
+}
+console.log(event.target);
+
+const originalImage = event.target.getAttribute('data-source');
+console.log(originalImage);
+
+const instance = basicLightbox.create(`
+<img src="${originalImage}" width="1100" height="640">
+`)
+instance.show()
+
+}
+
+
+const container = document.querySelector(".products");
+// container.insertAdjacentHTML("beforeend", createProductsMarkup(products));
+// container.addEventListener("click", handleCardClick);
+
+// function handleCardClick(event) {
+//     if(event.currentTarget === event.target) {
+//         return;
+//     }
+//     console.log(event.target);
+
+//     const currentProduct = event.target.closest(".product-item");
+//     const productId = Number(currentProduct.dataset.id);
+//     const productObj = products.find(({id}) => id === productId);
+//     console.log(productObj);
+
+//     const instance = basicLightbox.create(`
+//         <div class="modal">
+//         <img src="${productObj.img}" alt="${productObj.name}"/>
+//         <h2>${productObj.name}</h2>
+//             <p>Price: ${productObj.price}$</p>
+//                <p>Description: ${productObj.description}$</p>
+//         </div>
+//     `);
+//     instance.show();
+// }

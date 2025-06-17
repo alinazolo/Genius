@@ -100,3 +100,24 @@ color: aquamarine;
     position: absolute;
     border-radius: 50%;
   }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 24px;
+  }
+
+  .gallery-item {
+    list-style: none;
+      
+  }
+
+  .gallery-link {
+    cursor: pointer;
+  }
+
+  .gallery-image {
+  display: block;
+  max-width: 360px;
+  }
