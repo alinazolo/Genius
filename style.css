@@ -121,3 +121,42 @@ color: aquamarine;
   display: block;
   max-width: 360px;
   }
+
+  .alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    border-radius: 3px;
+    padding: 24px;
+    user-select: none;
+    cursor: pointer;
+
+    transform: translateX(calc(100% + 20px));
+    visibility: hidden;
+    opacity: 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+
+  .alert.success {
+border: 1px;
+background-color: green;
+color: #fff;
+  }
+
+    .alert.is-visible {
+transform: translateX(0);
+visibility: visible;
+opacity: 1;
+    }
+
+    .timer {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      color: black;
+      border-radius: 2px;
+    }

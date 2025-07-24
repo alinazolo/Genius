@@ -1028,112 +1028,112 @@
 //  console.log(calculatePerimeter({width: 5, length: 2}));
 
 // Unit 8 homework part 1
-const images = [
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
-    description: 'Hokkaido Flower',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
-    description: 'Container Haulage Freight',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
-    description: 'Aerial Beach View',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
-    description: 'Flower Blooms',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
-    description: 'Alpine Mountains',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
-    description: 'Mountain Lake Sailing',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
-    description: 'Alpine Spring Meadows',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
-    description: 'Nature Landscape',
-  },
-  {
-    preview:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
-    original:
-      'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
-    description: 'Lighthouse Coast Sea',
-  },
-];
+// const images = [
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg',
+//     description: 'Hokkaido Flower',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg',
+//     description: 'Container Haulage Freight',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg',
+//     description: 'Aerial Beach View',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2016/11/18/16/19/flowers-1835619_1280.jpg',
+//     description: 'Flower Blooms',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg',
+//     description: 'Alpine Mountains',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/16/23/04/landscape-4208571_1280.jpg',
+//     description: 'Mountain Lake Sailing',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
+//     description: 'Alpine Spring Meadows',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+//     description: 'Nature Landscape',
+//   },
+//   {
+//     preview:
+//       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843__340.jpg',
+//     original:
+//       'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+//     description: 'Lighthouse Coast Sea',
+//   },
+// ];
 
 
-function createGalleryMarkup(images) {
-    return images.map(
-        ({preview, original, description}) => `<li class="gallery-item"
-          <a class="gallery-link" href="${original}">
+// function createGalleryMarkup(images) {
+//     return images.map(
+//         ({preview, original, description}) => `<li class="gallery-item"
+//           <a class="gallery-link" href="${original}">
 
-        <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-        />
-  </a>
-</li>`
-    ).join("")
-}
+//         <img
+//       class="gallery-image"
+//       src="${preview}"
+//       data-source="${original}"
+//       alt="${description}"
+//         />
+//   </a>
+// </li>`
+//     ).join("")
+// }
 
-const gallery = document.querySelector(".gallery");
-gallery.insertAdjacentHTML("beforeend", createGalleryMarkup(images));
-gallery.addEventListener("click", galleryClick); 
+// const gallery = document.querySelector(".gallery");
+// gallery.insertAdjacentHTML("beforeend", createGalleryMarkup(images));
+// gallery.addEventListener("click", galleryClick); 
 
-function galleryClick(event) {
-    event.preventDefault();
-     if(event.target.nodeName !== 'IMG') {
- return;
-}
-console.log(event.target);
+// function galleryClick(event) {
+//     event.preventDefault();
+//      if(event.target.nodeName !== 'IMG') {
+//  return;
+// }
+// console.log(event.target);
 
-const originalImage = event.target.getAttribute('data-source');
-console.log(originalImage);
+// const originalImage = event.target.getAttribute('data-source');
+// console.log(originalImage);
 
-const instance = basicLightbox.create(`
-<img src="${originalImage}" width="1100" height="640">
-`)
-instance.show()
+// const instance = basicLightbox.create(`
+// <img src="${originalImage}" width="1100" height="640">
+// `)
+// instance.show()
 
-}
+// }
 
 
-const container = document.querySelector(".products");
+// const container = document.querySelector(".products");
 // container.insertAdjacentHTML("beforeend", createProductsMarkup(products));
 // container.addEventListener("click", handleCardClick);
 
@@ -1158,3 +1158,117 @@ const container = document.querySelector(".products");
 //     `);
 //     instance.show();
 // }
+
+//Notification
+
+// const NOTIFICATION_DELAY = 3000;
+// let timeoutId; 
+// const notification = document.querySelector(".js-alert");
+// const visibleClass = "is-visible"; // Better name than 'hiddenClass'
+
+// notification.addEventListener("click", onNotificationClick);
+
+// showNotification();
+
+// function onNotificationClick() {
+// hideNotification();
+// clearTimeout(timeoutId);
+
+// }
+
+// function showNotification() {
+//   notification.classList.add(visibleClass);
+//   timeoutId = setTimeout(hideNotification, NOTIFICATION_DELAY);
+//   console.log("Закриваємо сповіщення автоматично");
+// }
+
+// function hideNotification() {
+// notification.classList.remove(visibleClass);
+// }
+
+//Timer
+class Timer {
+  constructor({ onTick }) {
+    this.onTick = onTick;
+    this.intervalId = 0;
+    this.isActive = false;
+     this.startTime = 0;
+    this.elapsedTime = 0;
+    this.initTimer();
+  }
+
+ initTimer() {
+    const timeComponents = this.getTimeComponents(0);
+    this.onTick(timeComponents);
+  }
+
+   start() {
+    if (this.isActive) return;
+    this.isActive = true;
+   if (this.elapsedTime === 0) {
+      this.startTime = Date.now();
+    } else {
+      // Resume from pause
+      this.startTime = Date.now();
+    }
+   this.startTime = Date.now();
+    this.intervalId = setInterval(() => {
+      const currentTime = Date.now();
+      // const diff = currentTime - startTime;
+          const timePassed = this.elapsedTime + (currentTime - this.startTime);
+      const timeComponents = this.getTimeComponents(timePassed);
+      this.onTick(timeComponents);
+    }, 1000);
+  }
+
+  pause() {
+if (!this.isActive) return;
+clearInterval(this.intervalId);
+this.isActive = false;
+this.elapsedTime += Date.now() - this.startTime;
+  }
+
+  stop() {
+       if (!this.isActive) return;
+    clearInterval(this.intervalId);
+    this.intervalId = null;
+    this.isActive = false;
+    this.startTime = 0;
+    this.elapsedTime = 0;
+    this.initTimer(); // reset display to 00:00:00
+  }
+
+ getTimeComponents(time) {
+    const hours = this.pad(
+      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    );
+    const mins = this.pad(
+      Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))
+    );
+    const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+
+    return { hours, mins, secs };
+  }
+
+  pad(value) {
+    return String(value).padStart(2, "0");
+  }
+}
+
+const startBtn = document.querySelector("button[data-action-start]");
+const pauseBtn = document.querySelector("button[data-action-pause]");
+const stopBtn = document.querySelector("button[data-action-stop]");
+const clockface = document.querySelector(".js-clockface");
+
+ const timer = new Timer({
+  onTick: updateClockface,
+ })
+
+ startBtn.addEventListener("click", timer.start.bind(timer));
+ pauseBtn.addEventListener("click", timer.pause.bind(timer))
+stopBtn.addEventListener("click", timer.stop.bind(timer));
+
+
+ function updateClockface({hours, mins, secs}) {
+  clockface.textContent = `${hours}:${mins}:${secs}`;
+ }
